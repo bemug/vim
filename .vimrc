@@ -10,7 +10,6 @@ set nocp
 syn on
 filetype indent plugin on
 syntax enable
-set syntax=on
 
 "Indentation
 set smartindent
