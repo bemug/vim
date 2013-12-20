@@ -69,6 +69,11 @@ set showmode
 
 map <F3> :!sqlplus bemug/qsdqsd46544q@ensioracle1 @'%:p'<CR>
 
+"Gvim options
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+
 "Gummy vitamins
 colorscheme vitamins 
 
