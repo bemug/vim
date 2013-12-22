@@ -15,4 +15,5 @@ then
 fi
 
 ln -s $(pwd)/.vimrc ~/.vimrc
+cp -r .vim ~/.vim
 echo "Done!"
