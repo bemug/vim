@@ -3,8 +3,42 @@
 """"""""""""""
 "Made with love <3
 
-"Remove compatibility
-set nocp
+"VUNDLE
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" own stuff
+Plugin 'kien/ctrlp.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'bling/vim-airline'
+Plugin 'ciaranm/detectindent'
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+"END VUNDLE
 
 "coloration
 syn on
@@ -37,7 +71,6 @@ set  ignorecase
 set  smartcase
 
 "Auto completion
-set  wildmenu    "affiche le menu
 set  wildmode =list:longest,list:full    "affiche toutes les possibilités
 set  wildignore =*.o,*.r,*.so,*.sl,*.tar,*.tgz    "ignorer certains types de fichiers pour la complétion des includes
 
@@ -46,18 +79,15 @@ set autoread
 
 "Always show current position
 set ruler
+"
+"Always show status bar
+set laststatus=2
 
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
-
-" Always show the status line
-set laststatus=2
-
-" Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=5
@@ -74,8 +104,8 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 
-"Gummy vitamins
-colorscheme vitamins 
+"Colors
+colorscheme Tomorrow-Night
 
 "Helpers
 " Returns true if paste mode is enabled
@@ -86,3 +116,8 @@ function! HasPaste()
 	return ''
 endfunction
 
+"whitespaces and tabs
+set list listchars=tab:→\ ,trail:·
+
+"ctrlp only in cur dir
+let g:ctrlp_working_path_mode = 0
