@@ -92,12 +92,18 @@ set tm=500
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=5
 
+"Highlight 81 column (oldschool style)
+set textwidth=80
+set colorcolumn=+1
+
 "Stop acting dumb when pasting
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
 map <F3> :!sqlplus bemug/qsdqsd46544q@ensioracle1 @'%:p'<CR>
+
+map <F4> :set spell!<CR><Bar>:echo "Spell Check: " . strpart("OffOn", 3 * &spell, 3)<CR>
 
 "Gvim options
 set guioptions-=m  "remove menu bar
