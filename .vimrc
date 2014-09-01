@@ -23,6 +23,8 @@ Plugin 'bling/vim-airline'
 Plugin 'ciaranm/detectindent'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-scripts/taglist.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -127,3 +129,9 @@ set list listchars=tab:→\ ,trail:·
 
 "ctrlp only in cur dir
 let g:ctrlp_working_path_mode = 0
+
+"fast save
+map <S-w> :w<CR>
+
+"power line fonts
+let g:airline_powerline_fonts = 1
