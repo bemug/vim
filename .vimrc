@@ -54,6 +54,9 @@ set noexpandtab
 set tabstop=4
 set shiftwidth=4
 
+"Swap files in their own directory
+set directory=$HOME/.vim/swapfiles//
+
 "Line number
 set nu
 
