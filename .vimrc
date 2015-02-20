@@ -134,8 +134,8 @@ set list listchars=tab:→\ ,trail:·
 "ctrlp only in cur dir
 let g:ctrlp_working_path_mode = 0
 
-"fast save
-map <S-w> :w<CR>
+"c++11
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
 "power line fonts
 let g:airline_powerline_fonts = 1
