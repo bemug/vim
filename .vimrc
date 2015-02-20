@@ -117,7 +117,7 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 
 "Colors
-colorscheme Tomorrow-Night
+colorscheme Tomorrow-Night-Bright
 
 "Helpers
 " Returns true if paste mode is enabled
