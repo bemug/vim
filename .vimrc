@@ -60,9 +60,6 @@ set directory=$HOME/.vim/swapfiles//
 "Line number
 set nu
 
-"Enable mouse (I'm low)
-set mouse=a
-
 "Highlight matching brackets
 set showmatch
 
