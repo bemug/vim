@@ -24,9 +24,11 @@ Plugin 'ciaranm/detectindent'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'scrooloose/syntastic'
-Plugin 'vim-scripts/taglist.vim'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
+Plugin 'luochen1990/rainbow'
+Plugin 'majutsushi/tagbar'
+let g:rainbow_active = 1
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -48,6 +50,7 @@ filetype plugin indent on    " required
 syn on
 filetype indent plugin on
 syntax enable
+set omnifunc=syntaxcomplete#Complete
 
 "Indentation
 set smartindent
@@ -109,6 +112,14 @@ map <F3> :!sqlplus bemug/qsdqsd46544q@ensioracle1 @'%:p'<CR>
 
 map <F4> :set spell!<CR><Bar>:echo "Spell Check: " . strpart("OffOn", 3 * &spell, 3)<CR>
 
+"TabBar shortcut
+nmap <F8> :TagbarToggle<CR>
+
+"Omnicompletion
+if !has("gui_running")
+    inoremap <C-@> <C-x><C-o>
+endif
+
 "Gvim options
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
@@ -129,6 +140,9 @@ endfunction
 "whitespaces and tabs
 set list listchars=tab:→\ ,trail:·
 
+"Let me open how many I want
+set tabpagemax=100
+
 "ctrlp only in cur dir
 let g:ctrlp_working_path_mode = 0
 
@@ -137,3 +151,6 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
 "power line fonts
 let g:airline_powerline_fonts = 1
+
+"relative line numbers
+set relativenumber
