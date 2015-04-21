@@ -28,6 +28,8 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'luochen1990/rainbow'
 Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bogado/file-line'
 let g:rainbow_active = 1
 
 " All of your Plugins must be added before the following line
