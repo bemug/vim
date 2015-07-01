@@ -24,13 +24,11 @@ Plugin 'ciaranm/detectindent'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'scrooloose/syntastic'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'vim-scripts/DoxygenToolkit.vim'
-Plugin 'luochen1990/rainbow'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bogado/file-line'
-let g:rainbow_active = 1
+Plugin 'mrtazz/DoxygenToolkit.vim'
+Plugin 'will133/vim-dirdiff'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -52,6 +50,7 @@ filetype plugin indent on    " required
 syn on
 filetype indent plugin on
 syntax enable
+filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
 "Indentation
@@ -155,4 +154,25 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11'
 let g:airline_powerline_fonts = 1
 
 "relative line numbers
-set relativenumber
+"set relativenumber
+
+"Look for tags, and iterate in parents dir untill found
+"set tags=./tags;/
+set tags=./tags,tags;$HOME
+
+"Mouse support
+set mouse=a
+
+" Don't show seperators
+"let g:airline_left_sep=''
+"let g:airline_right_sep=''
+
+"" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+"Escape using jj
+inoremap jj <Esc>
+
