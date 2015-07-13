@@ -164,10 +164,10 @@ set tags=./tags,tags;$HOME
 set mouse=a
 
 " Don't show seperators
-"let g:airline_left_sep=''
-"let g:airline_right_sep=''
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 
-"" Enable the list of buffers
+" Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 
 " Show just the filename
@@ -176,3 +176,16 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 "Escape using jj
 inoremap jj <Esc>
 
+"Highligh cursor line
+set cursorline
+
+"Access system clipboard
+set clipboard=unnamedplus
+
+" Ruby is an oddball in the family, use special spacing/rules
+if v:version >= 703
+  " Note: Relative number is quite slow with Ruby, so is cursorline
+  autocmd FileType ruby setlocal nocursorline
+else
+  autocmd FileType ruby setlocal
+endif
